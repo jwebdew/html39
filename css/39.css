@@ -1,0 +1,156 @@
+@charset "utf-8";
+ 
+ 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+ 
+  /* font-family: 'Bebas Neue', sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    line-height: 1;
+    color: #333;
+    /* font-family: 'Bebas Neue', sans-serif; */
+}
+
+.mobile {
+    display: none;
+}
+
+header {
+    height: 100px;
+    position: relative;
+    z-index: 99;
+}
+header .inner {
+    height: 100%;
+    max-width: 1280px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .inner .pc .gnb {
+    display: flex;
+    text-align: center;
+}
+header .inner .pc .gnb .depth01 {
+    position: relative;
+}
+header .inner .pc .gnb .depth01 > a {
+    line-height: 100px;
+    padding: 0 30px;
+}
+
+header .inner .pc .gnb .depth01 .depth02 {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-color: rgb(190 140 107);
+    display: none;
+}
+header .inner .pc .gnb .depth01:hover > a {
+    color: rgb(19, 90, 182);
+}
+header .inner .pc .gnb .depth01:hover .depth02 {
+    display: block;
+}
+
+header .inner .pc .gnb .depth01 .depth02 li {
+    padding: 15px 0;
+    color: #fff;
+}
+header .inner .pc .gnb .depth01 .depth02 li:hover {
+    background-color: rgb(19, 90, 182);
+}
+
+/* main_visual */
+.main_visual {
+    height: 100vh;
+    position: relative;
+    background-color: rgb(19, 90, 182);
+}
+.main_visual img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_visual div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vw;
+}
+.main_visual div h2 {
+    /* 블렌딩효과 */
+    mix-blend-mode: difference;
+    color: #fff;
+}
+@media screen and (max-width:1024px) {
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+
+    /* 모바일 내비게이션 */
+    .mobile_gnb {
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        right: -100%; /* 화면밖으로 내보냄 */
+        top: 0;
+        transition: 1s;
+        background-color: rgb(190 140 107);
+        padding: 50px;
+        box-sizing: border-box;
+
+        overflow: scroll; 
+
+    }
+
+    .mobile_gnb::-webkit-scrollbar {
+        display: none;
+        /* 스크롤바 숨김 */
+    }
+
+
+    .mobile_gnb .depth01 {
+        background-color: #fff;
+        margin: 30px 0;
+    }
+
+    .mobile_gnb .depth01 > a {
+        display: block;
+        padding: 25px 0;
+        text-align: center;
+        border-bottom: 2px solid rgb(190 140 107);
+        color: rgb(190 140 107);
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .mobile_gnb .depth01 .depth02 li {
+        padding: 20px 0;
+        text-align: center;
+        border-bottom: 1px solid rgb(190 140 107);
+    }
+
+}/* 1024px */
